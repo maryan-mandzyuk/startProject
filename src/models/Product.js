@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const ProductSchema = new mongoose.Schema({
+const ProductSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -14,7 +14,7 @@ const ProductSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    enum: ['woman', 'man', 'unisex'],
+    enum: ["woman", "man", "unisex"],
     required: true
   },
   forKid: {
@@ -57,7 +57,7 @@ const ProductSchema = new mongoose.Schema({
     {
       user: {
         type: Schema.Types.ObjectId,
-        ref: 'users'
+        ref: "users"
       },
       rating: {
         type: Number,
@@ -73,4 +73,4 @@ const ProductSchema = new mongoose.Schema({
   ]
 });
 
-module.exports = Product = mongoose.model('product', ProductSchema);
+module.exports = Product = mongoose.model("product", ProductSchema);
